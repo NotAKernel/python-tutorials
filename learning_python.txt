@@ -1,0 +1,6 @@
+In Python you can print things into a terminal,
+You can store items in lists, tuples or dictionaries,
+you can access and use these automatically with functions,
+you can automate functions with classes,
+you can accept user input and use that to make your program interactive,
+you can access files from different directories and work with them.
