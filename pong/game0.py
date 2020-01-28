@@ -45,7 +45,9 @@ class Game():
         while True:
             self.window.update()
             self.ball.updatePosition(self.paddle_a, self.paddle_b)
-            self.ball.ballGoal
+            updated_a, updated_b = self.ball.scoreUpdate(self.score_a, self.score_b, self.pen)
 
-        if self.ball.ballGoal(self.score_a, self.score_b):
-            self.pen.updateScore(self.score_a, self.score_b)
+            if self.score_a != updated_a or self.score_b != updated_b:
+                self.score_a = updated_a
+                self.score_b = updated_b
+                self.pen.updateScore(self.score_a, self.score_b)

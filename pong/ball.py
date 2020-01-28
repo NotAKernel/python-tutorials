@@ -42,9 +42,8 @@ class Ball:
             self.ball.dx *= -1.2
             # os.system("afplay bounce.wav&")
 
-
-    def ballGoal(self, score_a, score_b):
-
+    def scoreUpdate(self, score_a, score_b, pen):    
+        
         # Scoring
         if self.ball.xcor() > 380:
             self.ball.goto(0, 0)
@@ -57,4 +56,5 @@ class Ball:
             score_b += 1
             self.ball.dx = -2
             self.ball.dx *= -1
-        
+
+        return score_a, score_b
