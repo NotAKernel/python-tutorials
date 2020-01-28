@@ -37,10 +37,13 @@ class Game():
     # Main game loop & bindings
     def run(self):
         self.window.listen()
-        self.window.onkey(self.paddle_a.paddleUp, "w")
-        self.window.onkey(self.paddle_a.paddleDown, "s")
+        self.window.onkey(self.paddle_a.paddleUp, "s")
+        self.window.onkey(self.paddle_a.paddleDown, "z")
+        
+        
         self.window.onkey(self.paddle_b.paddleUp, "Up")
         self.window.onkey(self.paddle_b.paddleDown, "Down")
+        
         
         while True:
             self.window.update()
@@ -51,3 +54,4 @@ class Game():
                 self.score_a = updated_a
                 self.score_b = updated_b
                 self.pen.updateScore(self.score_a, self.score_b)
+

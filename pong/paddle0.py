@@ -11,12 +11,17 @@ class Paddle:
         self.paddle.penup()
         self.paddle.goto(starting_pos[0], starting_pos[1])
 
+
     def paddleUp(self):
         y = self.paddle.ycor()
         y += 20
+        if y + 50 >= 300:
+            y = 244
         self.paddle.sety(y)
 
     def paddleDown(self):
         y = self.paddle.ycor()
         y -= 20
+        if y - 50 <= -300:
+            y = -244
         self.paddle.sety(y)

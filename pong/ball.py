@@ -35,7 +35,7 @@ class Ball:
         
         # Paddle and ball collisions
         if self.ball.xcor() < -340 and self.ball.ycor() < paddle_a.paddle.ycor() + 50 and self.ball.ycor() > paddle_a.paddle.ycor() - 50:
-            self.ball.dx *= -1.2 
+            self.ball.dx *= -1.2
             # os.system("afplay bounce.wav&")
         
         elif self.ball.xcor() > 340 and self.ball.ycor() < paddle_b.paddle.ycor() + 50 and self.ball.ycor() > paddle_b.paddle.ycor() - 50:
