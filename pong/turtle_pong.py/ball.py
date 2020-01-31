@@ -26,21 +26,21 @@ class Ball:
         if self.ball.ycor() > 290:
             self.ball.sety(290)
             self.ball.dy *= -1
-            # os.system("afplay bounce.wav&")
+            os.system("afplay bounce.wav&")
 
         elif self.ball.ycor() < -290:
             self.ball.sety(-290)
             self.ball.dy *= -1
-            # os.system("afplay bounce.wav&")
+            os.system("afplay bounce.wav&")
         
         # Paddle and ball collisions
         if self.ball.xcor() < -340 and self.ball.ycor() < paddle_a.paddle.ycor() + 50 and self.ball.ycor() > paddle_a.paddle.ycor() - 50:
             self.ball.dx *= -1.2
-            # os.system("afplay bounce.wav&")
+            os.system("afplay bounce.wav&")
         
         elif self.ball.xcor() > 340 and self.ball.ycor() < paddle_b.paddle.ycor() + 50 and self.ball.ycor() > paddle_b.paddle.ycor() - 50:
             self.ball.dx *= -1.2
-            # os.system("afplay bounce.wav&")
+            os.system("afplay bounce.wav&")
 
     def scoreUpdate(self, score_a, score_b, pen):    
         

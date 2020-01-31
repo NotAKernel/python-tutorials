@@ -32,3 +32,8 @@ class Table:
         in_circle.color("red")
         in_circle.fillcolor("blue")
         in_circle.shapesize(stretch_len= 3, stretch_wid= 3)
+     
+
+    
+
+    

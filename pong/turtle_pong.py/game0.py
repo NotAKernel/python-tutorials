@@ -35,7 +35,12 @@ class Game():
         self.pen = Pen()
 
     # Main game loop & bindings
-    def run(self):
+
+    def pause(self):
+        self.paused = False
+        
+
+    def set_bindings(self):
         self.window.listen()
         self.window.onkey(self.paddle_a.paddleUp, "s")
         self.window.onkey(self.paddle_a.paddleDown, "z")
@@ -43,15 +48,17 @@ class Game():
         
         self.window.onkey(self.paddle_b.paddleUp, "Up")
         self.window.onkey(self.paddle_b.paddleDown, "Down")
-        
-        
-        while True:
-            self.window.update()
-            self.ball.updatePosition(self.paddle_a, self.paddle_b)
-            updated_a, updated_b = self.ball.scoreUpdate(self.score_a, self.score_b, self.pen)
+    
+    
+    def run(self):
+                
+            while True:
 
-            if self.score_a != updated_a or self.score_b != updated_b:
-                self.score_a = updated_a
-                self.score_b = updated_b
-                self.pen.updateScore(self.score_a, self.score_b)
-
+                self.window.update()
+                self.ball.updatePosition(self.paddle_a, self.paddle_b)
+                updated_a, updated_b = self.ball.scoreUpdate(self.score_a, self.score_b, self.pen)
+                    
+                if self.score_a != updated_a or self.score_b != updated_b:
+                    self.score_a = updated_a
+                    self.score_b = updated_b
+                    self.pen.updateScore(self.score_a, self.score_b)
